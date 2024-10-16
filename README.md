@@ -1,7 +1,8 @@
 # winc1500-Manual-UART-Firmware-Update
-WINC1500 manual UART firmware update procedure and slightly modified Microchip flash script.  This is to consolidate and supplement other (incomplete) documentation from Microchip.
+This repo serves as a WINC1500 manual UART firmware update procedure and slightly modified Microchip flash script.  This is to consolidate and supplement other (incomplete) documentation from Microchip.
 
-The original script and firmware update files can be found [here](https://github.com/Microchip-MPLAB-Harmony/wireless_wifi/tree/master/utilities/wifi/winc)
+## Modified Source Script
+NOTE: The original script and firmware update files can be found [here](https://github.com/Microchip-MPLAB-Harmony/wireless_wifi/tree/master/utilities/wifi/winc)
 The script in this repo has been modified to allow the user to power cycle the WINC1500 during the update proceedure.  Specifically, at line 133 of winc_flash_tool.cmd added:
 ```
 echo Power cycle WINC and set to bootloader mode.
@@ -9,6 +10,7 @@ pause 1
 ```
 [Source](https://forum.microchip.com/s/topic/a5C3l000000MeKbEAK/t385088)
 
+## Firmware Update Proceedure
 1. Connect 3.3V UART to USB converter directly to WINC1500 TX, RX, GND pins (solder directly to WINC1500 module if needed).
 2. Program microcontroller to toggle enable and reset lines to put module in bootloader mode.  Put this code in main.c:
    
@@ -39,6 +41,11 @@ or
 If there are any difficulties regarding the connections (the chip not being discovered when running the programming tools),
 the WINC1500 module can be manually put in the right state by putting the CHIP_EN pin to VCC and the RESET pin to VCC and
 keeping them connected to VCC after this while the programming is being executed.
+
+In short, after powering up the module, the CHIP_EN must be pulled high, and then the RESETN must be pulled high.
+![image](https://github.com/user-attachments/assets/f6691b0f-01be-4dfd-a497-59fde68a8383)
+
+
 ```
 [Source](https://microchip.my.site.com/s/article/WINC1500-Firmware-Update-methods)
 
