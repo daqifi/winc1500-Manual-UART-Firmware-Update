@@ -45,6 +45,7 @@ keeping them connected to VCC after this while the programming is being executed
 In short, after powering up the module, the CHIP_EN must be pulled high, and then the RESETN must be pulled high.
 ```
 ![image](https://github.com/user-attachments/assets/f6691b0f-01be-4dfd-a497-59fde68a8383)
+
 [Source](https://microchip.my.site.com/s/article/WINC1500-Firmware-Update-methods)
 
 3.  Power cycle the WINC1500.
