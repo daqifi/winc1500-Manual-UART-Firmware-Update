@@ -3,14 +3,14 @@ This repo serves as a WINC1500 manual UART firmware update procedure and slightl
 
 ## Modified Source Script
 NOTE: The original script and firmware update files can be found [here](https://github.com/Microchip-MPLAB-Harmony/wireless_wifi/tree/master/utilities/wifi/winc)
-The script in this repo has been modified to allow the user to power cycle the WINC1500 during the update proceedure.  Specifically, at line 133 of winc_flash_tool.cmd added:
+The script in this repo has been modified to allow the user to power cycle the WINC1500 during the update procedure.  Specifically, at line 133 of winc_flash_tool.cmd added:
 ```
 echo Power cycle WINC and set to bootloader mode.
 pause 1
 ```
 [Source](https://forum.microchip.com/s/topic/a5C3l000000MeKbEAK/t385088)
 
-## Firmware Update Proceedure
+## Firmware Update Procedure
 1. Connect 3.3V UART to USB converter directly to WINC1500 TX, RX, GND pins (solder directly to WINC1500 module if needed).
 2. Program microcontroller to toggle enable and reset lines to put module in bootloader mode.  Put this code in main.c:
    
