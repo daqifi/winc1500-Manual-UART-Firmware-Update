@@ -50,7 +50,7 @@ In short, after powering up the module, the CHIP_EN must be pulled high, and the
 
 3.  Power cycle the WINC1500.
 4.  Navigate to the \winc folder, open a terminal and execute
-`.\winc_flash_tool.cmd /p COM20 /d WINC1500 /v 19.7.7 /x /e /i aio /w
+`.\winc_flash_tool.cmd /p COM20 /d WINC1500 /v 19.7.7 /x /e /i aio /w`
 5.  The script should initially connect to the WINC1500 and read the chip ID and XO offset.
 6.  Eventually, the script will pause and display:
 ```
