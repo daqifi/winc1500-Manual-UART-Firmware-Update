@@ -9,6 +9,7 @@ echo Power cycle WINC and set to bootloader mode.
 pause 1
 ```
 [Source](https://forum.microchip.com/s/topic/a5C3l000000MeKbEAK/t385088)
+These modifications seemed necessary when connecting directly to the WINC1500 with a USBtoUART adapter.  However, they don't seem necessary when flashing through the DAQiFi firmware.
 
 ## Firmware Update Procedure
 1. Connect 3.3V UART to USB converter directly to WINC1500 TX, RX, GND pins (solder directly to WINC1500 module if needed).
